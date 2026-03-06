@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
-import { Edges, RoundedBox, Environment, Float, Box } from '@react-three/drei';
+import { Edges, Environment, Float, Box } from '@react-three/drei';
 import * as THREE from 'three';
 
 const ArchitecturalBox = ({ position, args, rotationSpd }: any) => {
