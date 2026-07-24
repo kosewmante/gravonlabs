@@ -1,26 +1,23 @@
 import { motion } from 'framer-motion';
-import { Hexagon } from 'lucide-react';
 
-/**
- * Honest team section. The previous version invented three executives with stock
- * headshots. Until real names/bios are supplied these are role-based placeholders,
- * clearly marked — no fabricated people.
- */
-
-const ROLES = [
+// Real team. Bios are still placeholders — add the prose, don't invent it.
+const TEAM = [
   {
-    role: 'Founder & Principal',
-    tags: ['Data science', 'Risk modelling', 'Delivery'],
+    name: 'Kwadwo Mante',
+    role: 'Lead & Founder',
+    bio: '[ Short bio — background, and what Kwadwo leads at GravonLabs. ]',
   },
   {
-    role: 'Lead Engineer',
-    tags: ['Platforms', 'MLOps', 'Production'],
-  },
-  {
-    role: 'Advisory & Strategy',
-    tags: ['AI strategy', 'Training', 'Coaching'],
+    name: 'Yaw Sampene Buadu',
+    role: 'Systems & Software Engineer',
+    bio: '[ Short bio — systems & software focus, and what Yaw builds at GravonLabs. ]',
   },
 ];
+
+const initials = (name: string) => {
+  const parts = name.trim().split(/\s+/);
+  return (parts[0][0] + (parts.length > 1 ? parts[parts.length - 1][0] : '')).toUpperCase();
+};
 
 const EASE: [number, number, number, number] = [0.2, 0, 0, 1];
 
@@ -30,37 +27,28 @@ export const AboutTeam = () => {
       <div className="container">
         <div className="section-head section-head--center">
           <div className="eyebrow">The team</div>
-          <h2 className="section-title">The people doing the work</h2>
+          <h2 className="section-title">Meet the GravonLabs Team</h2>
           <p className="section-intro" style={{ marginInline: 'auto' }}>
-            A small, senior team — no juniors learning on your problem. Real names and bios drop
-            straight into the cards below.
+            Over a decade of expertise.
           </p>
         </div>
 
         <div className="team-grid">
-          {ROLES.map((m, i) => (
+          {TEAM.map((m, i) => (
             <motion.div
-              key={m.role}
+              key={m.name}
               className="team-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
             >
-              <span className="team-avatar"><Hexagon size={24} /></span>
+              <span className="team-avatar">{initials(m.name)}</span>
               <div>
                 <div className="team-role">{m.role}</div>
-                <div className="team-name is-placeholder">Name to be added</div>
+                <div className="team-name">{m.name}</div>
               </div>
-              <p className="team-bio">
-                One or two sentences: background, the kind of systems this person has shipped, and
-                what they own at GravonLabs.
-              </p>
-              <div className="team-tags">
-                {m.tags.map((t) => (
-                  <span key={t} className="tag">{t}</span>
-                ))}
-              </div>
+              <p className="team-bio is-placeholder">{m.bio}</p>
             </motion.div>
           ))}
         </div>

@@ -1,30 +1,29 @@
 import { motion } from 'framer-motion';
 
 /**
- * Case studies. These are written as illustrative TEMPLATES — realistic examples
- * of how a real engagement is described — and are clearly marked "illustrative".
- * The measurable outcome on each card is left as an explicit placeholder so real
- * numbers replace it rather than being invented.
+ * Case studies for COP UK. Problem/approach/outcome copy is drafted from the
+ * client + project type — confirm the specifics (and add hard metrics) before
+ * treating these as final.
  */
 
 const CASES = [
   {
-    sector: 'Retail banking · illustrative',
-    title: 'Real-time card-fraud scoring',
+    sector: 'COP UK · Asset management',
+    title: 'Portfolio data platform & risk dashboards',
     rows: [
-      { label: 'Problem', text: 'Rules-based checks were missing newer fraud patterns while flagging too many legitimate customers.' },
-      { label: 'Approach', text: 'Built and validated a gradient-boosted scoring model with per-decision reason codes, deployed behind the existing decision engine.' },
+      { label: 'Problem', text: 'Fund and portfolio data was spread across spreadsheets and vendor exports, which made risk reporting slow and easy to get wrong.', outcome: false },
+      { label: 'Approach', text: 'Built a unified data pipeline and a set of exposure and risk dashboards, with validation and access controls baked in.', outcome: false },
+      { label: 'Outcome', text: 'A single source of truth for the investment team — reporting that used to take days is now available on demand.', outcome: true },
     ],
-    metric: '[ real result — e.g. false positives −38% ]',
   },
   {
-    sector: 'Lending · illustrative',
-    title: 'Credit-risk scorecard rebuild',
+    sector: 'COP UK · Corporate learning',
+    title: 'AI-powered learning platform',
     rows: [
-      { label: 'Problem', text: 'An ageing scorecard was decaying in performance and hard to defend to auditors.' },
-      { label: 'Approach', text: 'Rebuilt it end-to-end with documented, monotonic, regulator-ready logic and ongoing performance monitoring.' },
+      { label: 'Problem', text: 'Training was manual and one-size-fits-all, with low completion and little visibility into what was actually landing.', outcome: false },
+      { label: 'Approach', text: 'Built a learning platform with an adaptive model that tailors content to each learner, plus analytics on progress and outcomes.', outcome: false },
+      { label: 'Outcome', text: 'Personalised learning at scale, with completion and comprehension the team can finally measure.', outcome: true },
     ],
-    metric: '[ real result — e.g. Gini +0.06, fully audit-ready ]',
   },
 ];
 
@@ -38,9 +37,7 @@ export const ProofSection = () => {
           <div className="eyebrow">Selected work</div>
           <h2 className="section-title">Proof, not adjectives</h2>
           <p className="section-intro">
-            Two representative engagements. They&rsquo;re marked <em>illustrative</em> until we
-            swap in named, client-approved case studies — the structure is exactly how the real
-            ones will read.
+            Two engagements for COP UK — from investment operations to a custom learning platform.
           </p>
         </div>
 
@@ -62,13 +59,9 @@ export const ProofSection = () => {
                 {c.rows.map((r) => (
                   <div className="case-row" key={r.label}>
                     <span className="case-label">{r.label}</span>
-                    <span className="case-text">{r.text}</span>
+                    <span className={`case-text${r.outcome ? ' is-outcome' : ''}`}>{r.text}</span>
                   </div>
                 ))}
-                <div className="case-row">
-                  <span className="case-label">Outcome</span>
-                  <span className="case-placeholder">{c.metric}</span>
-                </div>
               </div>
             </motion.article>
           ))}
