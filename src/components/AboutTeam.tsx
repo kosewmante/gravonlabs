@@ -3,21 +3,18 @@ import { motion } from 'framer-motion';
 // Real team. Bios are still placeholders — add the prose, don't invent it.
 const TEAM = [
   {
-    name: 'Kwadwo Mante',
+    name: 'Kwadwo',
     role: 'Lead & Founder',
-    bio: '[ Short bio — background, and what Kwadwo leads at GravonLabs. ]',
+    photo: '/images/team/kwadwo',
+    bio: 'With over two decades of leadership spanning financial risk modeling, credit analytics, and modern AI engineering, Kwadwo founded GravonLabs to bring bank-grade rigor to mission-critical software. Holding an MSc in Analytics, he directs overall product vision and technical architecture—transforming complex predictive algorithms, fraud detection systems, and AI workflows into resilient, scalable platforms that solve high-stakes industry problems',
   },
   {
     name: 'Yaw Sampene Buadu',
     role: 'Systems & Software Engineer',
-    bio: '[ Short bio — systems & software focus, and what Yaw builds at GravonLabs. ]',
+    photo: '/images/team/yaw',
+    bio: 'Holding an MSc in Systems and Software Engineering and conducting doctoral research in Computing and Communications at The Open University, Yaw anchors the systems architecture at GravonLabs. He specializes in distributed system design, human-computer interaction, and high-performance cloud infrastructure—engineering the robust, fault-tolerant foundations that power GravonLabs\'s data engines and AI platforms.',
   },
 ];
-
-const initials = (name: string) => {
-  const parts = name.trim().split(/\s+/);
-  return (parts[0][0] + (parts.length > 1 ? parts[parts.length - 1][0] : '')).toUpperCase();
-};
 
 const EASE: [number, number, number, number] = [0.2, 0, 0, 1];
 
@@ -29,7 +26,7 @@ export const AboutTeam = () => {
           <div className="eyebrow">The team</div>
           <h2 className="section-title">Meet the GravonLabs Team</h2>
           <p className="section-intro" style={{ marginInline: 'auto' }}>
-            Over a decade of expertise.
+            Over two decades of expertise.
           </p>
         </div>
 
@@ -43,7 +40,17 @@ export const AboutTeam = () => {
               viewport={{ once: true, margin: '-50px' }}
               transition={{ duration: 0.5, delay: i * 0.1, ease: EASE }}
             >
-              <span className="team-avatar">{initials(m.name)}</span>
+              <picture className="team-avatar">
+                <source srcSet={`${m.photo}.webp`} type="image/webp" />
+                <img
+                  src={`${m.photo}.jpg`}
+                  alt={m.name}
+                  width={800}
+                  height={800}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </picture>
               <div>
                 <div className="team-role">{m.role}</div>
                 <div className="team-name">{m.name}</div>
