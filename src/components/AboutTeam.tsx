@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 // Real team. Bios are still placeholders — add the prose, don't invent it.
 const TEAM = [
   {
-    name: 'Kwadwo',
+    name: 'Kwadwo Mante',
     role: 'Lead & Founder',
     photo: '/images/team/kwadwo',
     bio: 'With over two decades of leadership spanning financial risk modeling, credit analytics, and modern AI engineering, Kwadwo founded GravonLabs to bring bank-grade rigor to mission-critical software. Holding an MSc in Analytics, he directs overall product vision and technical architecture—transforming complex predictive algorithms, fraud detection systems, and AI workflows into resilient, scalable platforms that solve high-stakes industry problems',
@@ -12,7 +12,7 @@ const TEAM = [
     name: 'Yaw Sampene Buadu',
     role: 'Systems & Software Engineer',
     photo: '/images/team/yaw',
-    bio: 'Holding an MSc in Systems and Software Engineering and conducting doctoral research in Computing and Communications at The Open University, Yaw anchors the systems architecture at GravonLabs. He specializes in distributed system design, human-computer interaction, and high-performance cloud infrastructure—engineering the robust, fault-tolerant foundations that power GravonLabs\'s data engines and AI platforms.',
+    bio: 'Holding an MSc in Systems and Software Engineering and conducting doctoral research in Computing and Communications at The Open University, Yaw anchors the systems architecture at GravonLabs. He specialises in distributed system design, human-computer interaction, and high-performance cloud infrastructure—engineering the robust, fault-tolerant foundations that power GravonLabs\'s data engines and AI platforms.',
   },
 ];
 
