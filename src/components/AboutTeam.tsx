@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-// Real team. Bios are still placeholders — add the prose, don't invent it.
+// Real team, real bios. Keep them factual — don't invent credentials.
 const TEAM = [
   {
     name: 'Kwadwo Mante',
