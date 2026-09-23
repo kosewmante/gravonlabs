@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { AboutUs } from './pages/AboutUs';
+import { NotFound } from './pages/NotFound';
 import { Footer } from './components/Footer';
 import { Hexagon } from 'lucide-react';
 import './index.css';
@@ -82,6 +83,7 @@ function AppContent() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
