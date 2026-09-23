@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 const TEAM = [
   {
     name: 'Kwadwo Mante',
-    role: 'Lead & Founder',
+    role: 'Director & Lead Consultant',
     photo: '/images/team/kwadwo',
-    bio: 'With over two decades of leadership spanning financial risk modeling, credit analytics, and modern AI engineering, Kwadwo founded GravonLabs to bring bank-grade rigor to mission-critical software. Holding an MSc in Analytics, he directs overall product vision and technical architecture—transforming complex predictive algorithms, fraud detection systems, and AI workflows into resilient, scalable platforms that solve high-stakes industry problems',
+    bio: 'Kwadwo has spent over two decades turning complex data environments into dependable operational systems across banking, pharmaceuticals and the public sector, from credit risk scorecards and stress testing to statistical outputs behind successful FDA and MHRA drug submissions. He founded GravonLabs to bring that regulatory-grade rigor to modern software and AI. Holding an MSc in Analytics, he leads product vision and technical architecture, building fraud detection, predictive modelling and automated data platforms that are resilient, scalable and ready for high-stakes decisions',
   },
   {
     name: 'Yaw Sampene Buadu',
