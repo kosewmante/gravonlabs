@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Hexagon } from 'lucide-react';
+import { Logo } from './Logo';
 
 const YEAR = new Date().getFullYear();
 
@@ -10,8 +10,7 @@ export const Footer = () => {
         <div className="footer-top">
           <div className="footer-brand">
             <div className="footer-brand-title">
-              <Hexagon size={22} color="var(--color-accent-on-ink)" />
-              GravonLabs
+              <Logo variant="light" />
             </div>
             <p className="footer-blurb">
               Software, data, and AI for teams that can&rsquo;t afford to get it wrong.

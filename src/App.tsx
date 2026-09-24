@@ -4,7 +4,7 @@ import { Home } from './pages/Home';
 import { AboutUs } from './pages/AboutUs';
 import { NotFound } from './pages/NotFound';
 import { Footer } from './components/Footer';
-import { Hexagon } from 'lucide-react';
+import { Logo } from './components/Logo';
 import './index.css';
 
 const NAV_LINKS = [
@@ -33,9 +33,8 @@ function NavigationBar() {
     <nav className="top-nav">
       <div className="nav-inner">
         <div className="nav-brand">
-          <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', color: 'inherit' }}>
-            <Hexagon size={22} className="logo-icon" />
-            <span>GravonLabs</span>
+          <Link to="/" aria-label="GravonLabs home">
+            <Logo />
           </Link>
         </div>
 
